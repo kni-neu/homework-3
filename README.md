@@ -4,12 +4,16 @@
 
 You may wish to use [Overleaf](http://www.overleaf.com) to type up LaTeX, which has most of the packages that would be needed. Otherwise, for Macs, you can download [MacTeX](https://www.tug.org/mactex/).
 
+## Data
+
+The data can be found on [here](https://course.ccs.neu.edu/cs6220/homework-3/). There should be two CSV files, originally from the Kaggle website, but with rows removed.
+
 ## Homework Template Files
 
 This templated repository has the following files
 
-* `assignment3qs.tex` - You can edit this for your assignment. If you do, make sure to rename the file `assignment3.tex` so that TA's know which file to compile and grade.
-* `assignment3qs.pdf` - These are the questions for the assignment. 
+* `assignment3-questions.tex` - You can edit this for your assignment. If you do, make sure to rename the file `assignment3.tex` so that TA's know which file to compile and grade.
+* `assignment3-questions.pdf` - These are the questions for the assignment. 
 
 ## Submission Guidelines
 
