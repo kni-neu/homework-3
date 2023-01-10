@@ -6,7 +6,7 @@ You may wish to use [Overleaf](http://www.overleaf.com) to type up LaTeX, which 
 
 ## Data
 
-The data can be found on [here](https://course.ccs.neu.edu/cs6220/homework-3/). There should be two CSV files, originally from the Kaggle website, but with rows removed.
+The data can be found on [here](https://course.ccs.neu.edu/cs6220/homework-3/). There should be two CSV files, originally from the Kaggle website, but with rows removed. *Please do not commit the data to your repository as these are larger files.* (You can consider using `git-lfs`.)
 
 ## Homework Template Files
 
