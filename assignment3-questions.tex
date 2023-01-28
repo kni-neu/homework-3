@@ -1,7 +1,7 @@
 \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
 
 \newcommand{\assignment}{3}
-\newcommand{\duedate}{February 15, 2023}
+\newcommand{\duedate}{January 25, 2023}
 \input{include/hw-template.tex}
 \author{
     \textbf{YOUR NAME} \\ 
@@ -13,105 +13,9 @@
 
 \maketitle % Print the title
 
-\section{Multisource Joins}
-
-News articles are commonly aggregated from multiple sites and companies. The landscape of news has been evolving ever since social media has amplified its effects. In politics, Congress has explored the topic of bias with the diversity of news sources. That is, news articles may cover news stories with differing perspectives and language. \\
-
-The data that we will be using today comes from Kaggle, and it is available \href{https://course.ccs.neu.edu/cs6220/homework-3/}{here}. There are two CSV files that we wish to join in this week's homework:
-
-\begin{itemize}
-    \item \verb"data/id_titles.csv"
-    \item \verb"data/id_publishers.csv"
-\end{itemize}
-
-As there name suggests, there is publishing data associated with articles and there is title and description information associated with the same articles. Each table has many instances, and each instance for both tables have an associated ID, where it is possible to join the two data sources.
-
-In this particular case, there is some missing information in the join. Your task is as follows. \\
-\\
-\\
-
-\textbf{Question 1 a.)}
-\begin{itemize}
-    \item Write out a file that has all the publishers for which there are no titles, called publishers\_no\_titles.txt. This table should look something like the below (ignore the values): \\
-    \includegraphics[width=100mm]{images/pub_no_title.png}
-\end{itemize} 
-.
-.
-\\
-
-\textbf{Question 1 b.)}
-\begin{itemize}
-    \item Write out a file that has all the publishers for which there are no titles, called titles\_no\_publishers.txt. That table should look something like the below (ignore the values): \\
-    \includegraphics[width=150mm]{images/title_no_pub.png}
-\end{itemize}    
-
-\section{Frequent Itemsets}
 %%%%%%%%%%%%%%%%%%%%
-\subsection{What are the frequent itemset rules?}
-
-\textbf{Question 2} What are the frequent itemset rules
-
-\section{Parameter Estimation}
-
-In the data provided by j
-
-\section{K-Means}
-
-The~\href{https://course.ccs.neu.edu/cs6220/homework-3/data/}{normalized automobile distributor timing speed and ignition coil gaps} for production F-150 trucks over the years of 1996, 1999, 2006, 2015, and 2022. We have stripped out the labels for the five years of data.\\
-
-\textbf{Question 3} \\
-
-Implement a simple $k$-means algorithm in Python on Colab with the following initialization:
-
-\begin{equation}
-\textbf{x}_1 = \left( \begin{matrix} 10 \\ 10 \end{matrix} \right), \textbf{x}_2 = \left( \begin{matrix} -10 \\ -10 \end{matrix} \right),
-\textbf{x}_3 = \left( \begin{matrix} 2 \\ 2 \end{matrix} \right),
-\textbf{x}_4 = \left( \begin{matrix} 3 \\ 3 \end{matrix} \right),
-\textbf{x}_5 = \left( \begin{matrix} -3 \\ -3 \end{matrix} \right),
-\end{equation} \\
-
-In order to main consistency between submissions, use a random seed of 27. You can do this with \\
-
-\begin{verbatim}
->> numpy.random.seed(seed=27)
-\end{verbatim} \\
-
-Scatter the results with the different clusters as different colors. What do you notice? \\
-
-\textbf{Question 4} \\
-
-A common distance metric is the \emph{Mahalanobis Distance} with a specialized covariance. Implement $k$-means with a distance metric as defined as: \\
-
-\begin{equation}
-d(\textbf{x}, \textbf{y}) = ( \textbf{x} - \textbf{y} )^T P^{-1} ( \textbf{x} - \textbf{y} )
-\end{equation}
-where \textbf{x} and \textbf{y} are two points, and $d(\textbf{x}, \textbf{y})$ is the distance between them. \\
-
-\begin{equation}
- P = \left(
-\begin{matrix}
-10 & 0.5 \\
--10 & 0.25
-\end{matrix}
-\right)
-\end{equation}
-\\
-Implement a specialized $k$-means with the above Mahalanobis Distance. Scatter the results with the different clusters as different colors. What do you notice? You may want to pre-compute $P^{-1}$ so that you aren't calculating an inverse every single loop of the the $k$-Means algorithm.
-
-
+\section{Homework Template}
 %%%%%%%%%%%%%%%%%%%%
-\section{Submission Instructions}
-%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-    \item Clearly mark your questions. Submit your \textbf{Colab URL}, output files (\textbf{publishers\_no\_titles.txt} and \textbf{titles\_no\_publishers.txt}) and PDF write-up via from the invited \href{https://classroom.github.com/a/Kog9MCRN}{Github link}. Provide repository URL on \href{https://www.gradescope.com/courses/494275}{Gradescope} before 5pm Wednesday, February 1, 2023.
-    
-    \href{https://docs.google.com/forms/d/e/1FAIpQLSfUfjMu0JPzuYqisZux2cvh1EfMH-D9MbkFFYjxp-yuRtLLvg/viewform}{this Google Forms} before 5pm Wednesday, February 1, 2023. You will need to follow the instructions about permissions.
-    \item Colab has an extensive Markdown capability, so make sure you document your code while writing it. Code’s legibility is part of our grading criterion, so please make sure it’s readable.
-    \item Include a diagram of your pipeline description in your writeup.
-    \item Include in your writeup the recommendations for the users with following user IDs: 924, 8941, 8942, 9019, 9020, 9021, 9022, 9990, 9992, 9993.
-\end{itemize}
-
 
 
 \end{document}
