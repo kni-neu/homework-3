@@ -1,0 +1,105 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\newcommand{\assignment}{3}
+\newcommand{\duedate}{February 15, 2023}
+\input{include/hw-template.tex}
+\author{
+    \textbf{YOUR NAME} \\ 
+    \textbf{YOUR GIT USERNAME} \\ 
+    \textbf{YOUR E-MAIL}
+}% INFORMATION
+
+\begin{document}
+
+\maketitle % Print the title
+
+% Convert to DOCX using https://pdf2docx.com/
+
+{\huge \textbf{Multisource Joins}}  \\
+
+News articles are commonly aggregated from multiple sites and companies. The landscape of news has been evolving ever since social media has amplified its effects. In politics, Congress has explored the topic of bias with the diversity of news sources. That is, news articles may cover news stories with differing perspectives and language. \\
+
+The data that we will be using today comes from Kaggle, and it is available \href{https://course.ccs.neu.edu/cs6220/homework-3/}{here}. There are two CSV files that we wish to join in this week's homework:
+
+\begin{itemize}
+    \item \verb"data/id_titles.csv"
+    \item \verb"data/id_publishers.csv"
+\end{itemize}
+
+As there name suggests, there is publishing data associated with articles and there is title and description information associated with the same articles. Each table has many instances, and each instance for both tables have an associated ID, where it is possible to join the two data sources.
+
+In this particular case, there is some missing information in the join. Your task is as follows. \\
+
+\textbf{Question 1 a.)}
+\begin{itemize}
+    \item Write out a file that has all the publishers for which there are no titles, called publishers\_no\_titles.txt. This table should look something like the below (ignore the values): \\
+    \includegraphics[width=100mm]{images/pub_no_title.png}
+\end{itemize} \\
+
+\textbf{Question 1 b.)}
+\begin{itemize}
+    \item Write out a file that has all the publishers for which there are no titles, called titles\_no\_publishers.txt. That table should look something like the below (ignore the values): \\
+    \includegraphics[width=150mm]{images/title_no_pub.png}
+\end{itemize} \\
+\\
+.\\
+\\
+{\huge \textbf{Frequent Itemsets}} \\
+%%%%%%%%%%%%%%%%%%%%
+
+Consider the following set of frequent 3-itemsets:
+
+\begin{verbatim}
+{1, 2, 3}, {1, 2, 4}, {1, 2, 5}, {1, 3, 4}, 
+{1, 3, 5}, {2, 3, 4}, {2, 3, 5}, {3, 4, 5}.
+\end{verbatim} \\
+
+Assume that there are only five items in the data set. \\
+
+{\Large \textbf{Question 2} [15 pts total]} \\
+\\
+\textbf{[5 pts] Question 2a.)} List all candidate 4-itemsets obtained by a candidate generation procedure using the $F_{k - 1} \times F_1$ merging strategy. \\
+\\
+% Answer:
+% {1, 2, 3, 4},{1, 2, 3, 5},{1, 2, 4, 5},{1, 3, 4, 5},{2, 3, 4, 5}.
+\textbf{[5 pts] Question 2b.)} List all candidate 4-itemsets obtained by the candidate generation procedure in A Priori, using $F_{k-1} \times F_{k-1}$. \\
+\\
+% Answer:
+% {1, 2, 3, 4}, {1, 2, 3, 5}, {1, 2, 4, 5}, {2, 3, 4, 5}.
+\textbf{[5 pts] Question 2c.)} List all candidate 4-itemsets that survive the candidate pruning step of
+the Apriori algorithm.
+Answer:
+{1, 2, 3, 4} \\
+\\
+\\
+{\huge \textbf{Parameter Estimation}} \\
+
+Any given coin flip can be described by the \textbf{Bernoulli distribution}, which can be written as:
+
+\begin{equation}
+p(x) = \theta^x (1 - \theta)^{1-x}
+\end{equation}
+From the above, we can see that the probability distribution is parameterized by $\theta$, which is unknown. Here, $x$ is the outcome of the coin flip, where $x=0$ could represent tails and $x=1$ could represent heads. The parameter $\theta$ is the fairness of the coin flip, ranging from [0, 1]. So, for example, if $\theta = 0.5$, it is a fair coin, and $p(x = 0) = p(x = 1) = 0.5$; that is it is equally probable to be either heads or tails. If $\theta = 0.4$, then $p(x = 0) = 0.6$ and $p(x=1) = 0.4$, and it is more likely for the coin toss to be tails.\\
+
+Let us say that we have a dataset of $N$ coinflips, where we have observed the sequence $\mathcal{D} = x_1, x_2, \cdots, x_N$. \\
+\\
+
+{\Large \textbf{Question 3} [15 pts total]} \\
+
+In terms of all $x_i$'s, what is the Maximum Likelihood Estimate (MLE) of the value of $\theta$?\\
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%
+{\huge \textbf{Submission Instructions}} \\
+%%%%%%%%%%%%%%%%%%%%
+
+When you have finished, follow the instructions on the \href{https://course.ccs.neu.edu/cs6220/homework-3/}{ homework main page} to submit your colab notebook
+
+% \begin{itemize}
+%     \item Clearly mark your questions. Submit your \textbf{*.iPYNB}, output files (\textbf{publishers\_no\_titles.txt} and \textbf{titles\_no\_publishers.txt}) and PDF write-up via from the invited \href{https://classroom.github.com/a/Kog9MCRN}{Github link}. Provide repository URL on \href{https://www.gradescope.com/courses/494275}{Gradescope} before 5pm Wednesday, February 15, 2023.
+% \end{itemize}
+
+
+
+\end{document}
