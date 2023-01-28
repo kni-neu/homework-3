@@ -1,4 +1,4 @@
-# Multi-Source Training Data Creation
+# Multi-Source Data Generation and Parameter Estimation
 
 ## LaTeX Advice
 
@@ -16,6 +16,8 @@ This templated repository has the following files
 * `assignment3-questions.pdf` - These are the questions for the assignment. 
 
 ## Submission Guidelines
+
+Please review the instructions from the [homework website](https://course.ccs.neu.edu/cs6220/homework-3/).
 
 At the end of this assignment, your submission will point to a repository, where the following files will be reviewed and subsequently graded:
 
