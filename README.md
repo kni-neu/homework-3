@@ -27,14 +27,14 @@ None of the other files in that repository will be reviewed. You can however, ha
 
 ```
 ./
-assignment2.tex
-assignment2.pdf
-assignment2.ipynb
+assignment3.tex
+assignment3.pdf
+assignment3.ipynb
 ./images
   graph_for_question-1.jpg
   results_for_question-2.jpg
 ./tex
-  question_2_proof.tex
+  question_3_proof.tex
 ./code
   helper_functions.py
 ```
