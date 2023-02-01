@@ -13,7 +13,6 @@
 
 \maketitle % Print the title
 
-% Convert to DOCX using https://pdf2docx.com/
 
 {\huge \textbf{Multisource Joins}}  \\
 
@@ -30,26 +29,28 @@ As there name suggests, there is publishing data associated with articles and th
 
 In this particular case, there is some missing information in the join. Your task is as follows. \\
 
-{\Large \textbf{Question 1 a.)} [15 pts]}
+{\Large \textbf{Question 1 a.)} [20 pts]}
 \begin{itemize}
-    \item Write out a file that has all the publishers for which there are no titles, called publishers\_no\_titles.txt. This table should look something like the below (ignore the values): \\
+    \item Write out a file that has all the data columns, but where the rows are only those articles where there are titles but no publisher information. Call it titles\_no\_publishers.txt. In your PDF writeup, include the first 10 rows ordered by ID. This table should look something like the below (ignore the values): \\
+    \begin{center}
     \includegraphics[width=100mm]{images/pub_no_title.png} \\
+    \end{center}
 \end{itemize}
 
-% {\Large \textbf{Question 1 b.)} [15 pts]}
 \begin{itemize}
-    \item Write out a file that has all the publishers for which there are no titles, called titles\_no\_publishers.txt. That table should look something like the below (ignore the values): \\
-    \includegraphics[width=150mm]{images/title_no_pub.png} \\
+    \item Write out a file that has all the data columns, but where the rows are only those articles where there are publishers but not title information. Call it titles\_no\_publishers.txt. In your PDF writeup, include the first 10 rows ordered by ID. That table should look something like the below (ignore the values): \\
+    \begin{center}
+    \includegraphics[width=150mm]{images/title_no_pub.png} \\    
+    \end{center}
 \end{itemize} 
 
-{\Large \textbf{Question 1 b.)} [5 pts]} \\
+{\Large \textbf{Question 1 b.)} [Extra Credit - 5 pts]} \\
 \begin{itemize}
-\item Explore the data further, and identify any potential problems that could arise if we were to apply any algorithm to it. Is there still missing data? If there are any issues with the data, what might you do to fix it? (You needn't code anything, but conceptually describe any issues you see and how you would remedy it.)
+\item Explore the data further, and identify potential problems that could arise if we were to further analyze the data (e.g., apply a machine learning algorithm). Is there still missing data? That is to say, do all the columns have the correct data? What could have gone wrong in the data creation step? (You needn't code anything, but conceptually describe any issues you see and how you would remedy it.)
 \end{itemize}
 .\\
 \\
 {\huge \textbf{Frequent Itemsets}} \\
-%%%%%%%%%%%%%%%%%%%%
 
 Consider the following set of frequent 3-itemsets:
 
@@ -58,27 +59,23 @@ Consider the following set of frequent 3-itemsets:
 {2, 3, 4}, {2, 3, 5}, {3, 4, 5}.
 \end{verbatim} \\
 
-Assume that there are only five items in the data set. This question was taken from \href{https://www-users.cse.umn.edu/~kumar001/dmbook/ch5_association_analysis.pdf}{Tan et al.}, which may help in reviewing Candidate Generation in Rule Generation.\\
+Assume that there are only five items in the data set. This question was taken from \href{https://www-users.cse.umn.edu/~kumar001/dmbook/ch5_association_analysis.pdf}{Tan et al.}, which may help in reviewing Candidate Generation.\\
 
-% {\Large \textbf{Question 2}} \\
-% \\
-{\Large \textbf{Question 2a.)} [10 pts]} \\
-List all candidate 4-itemsets obtained by a candidate generation procedure using the $F_{k - 1} \times F_1$ merging strategy. \\
-\\
-% Answer:
-% {1, 2, 3, 4},{1, 2, 3, 5},{1, 2, 4, 5},{1, 3, 4, 5},{2, 3, 4, 5}.
-{\Large \textbf{Question 2b.)} [10 pts]} \\
-List all candidate 4-itemsets obtained by the candidate generation procedure in A Priori, using $F_{k-1} \times F_{k-1}$. \\
-\\
-% Answer:
-% {1, 2, 3, 4}, {1, 2, 3, 5}, {1, 2, 4, 5}, {2, 3, 4, 5}.
+{\Large \textbf{Question 2a.)} [10 pts]}
+\begin{itemize}
+    \item List all candidate 4-itemsets obtained by a candidate generation procedure using the $F_{k - 1} \times F_1$ merging strategy. \\
+\end{itemize}
+{\Large \textbf{Question 2b.)} [10 pts]}
+\begin{itemize}
+    \item List all candidate 4-itemsets obtained by the candidate generation procedure in A Priori, using $F_{k-1} \times F_{k-1}$. \\
+\end{itemize}
 {\Large \textbf{Question 2c.)} [10 pts]} \\
-List all candidate 4-itemsets that survive the candidate pruning step of
+\begin{itemize}
+    \item List all candidate 4-itemsets that survive the candidate pruning step of
 the Apriori algorithm. \\
-% Answer:
-% {1, 2, 3, 4} \\
-\\
-\\
+\end{itemize}
+
+
 {\huge \textbf{Principle Components Analysis}} \\
 
 Italy is home to over 2000 grape varieties. Even within a single region, wines exhibit distinct attributes from different cultivators that can be measured with objective and numerical features. Notably, in the dataset we are exploring today, there are thirteen different measurements taken for different constituents found in the three types of wine. We would like to visualize how well-separated the data is for the different wineries in a 2D scatter plot.\\
@@ -88,28 +85,22 @@ We will be using the UCI Wine's dataset. Please review \verb"sklearn"'s descript
 from sklearn.datasets import load_wine
 wine = load_wine()
 \end{verbatim} \\
-
+\vspace{5mm}
 {\Large \textbf{Question 3} [25 pts]} \\
 
-Preprocess the the data with \textbf{z-score normalization} and scatter the data that's been projected onto the first two principle components with different colors for each target/class of wine. \\
-\\
-\\
+Preprocess the the data with \textbf{z-score normalization} and scatter the data that's been projected onto the first two principle components with different colors for each target/class of wine. Include your code (linked or inline).\\
+
+The below scatter plot is an example of displaying multiple classes with different colors on a single plot.
+
+\begin{center}
+    \includegraphics[width=75mm]{images/pca-example.png}
+\end{center}
+
 {\huge \textbf{Parameter Estimation}} \\
 
-% Any given coin flip can be described by the \textbf{Bernoulli distribution}, which can be written as:
 
-% \begin{equation}
-% p(x) = \theta^x (1 - \theta)^{1-x}
-% \end{equation}
-% From the above, we can see that the probability distribution is parameterized by $\theta$, which is unknown. Here, $x$ is the outcome of the coin flip, where $x=0$ could represent tails and $x=1$ could represent heads. The parameter $\theta$ is the fairness of the coin flip, ranging from [0, 1]. So, for example, if $\theta = 0.5$, it is a fair coin, and $p(x = 0) = p(x = 1) = 0.5$; that is it is equally probable to be either heads or tails. If $\theta = 0.4$, then $p(x = 0) = 0.6$ and $p(x=1) = 0.4$, and it is more likely for the coin toss to be tails.\\
-% \\
 
-% {\Large \textbf{Question 3} [15 pts total]} \\
 
-% Let us say that we have a dataset of $N$ coinflips, where we have observed the sequence $\mathcal{D} = x_1, x_2, \cdots, x_N$. In terms of all $x_i$'s, what is the Maximum Likelihood Estimate (MLE) of the value of $\theta$?\\
-% \\
-%
-% https://web.stanford.edu/class/archive/cs/cs109/cs109.1176/lectures/20-ParameterEstimation.pdf
 
 It is well-known that light bulbs commonly go out according to a Poisson distribution, and are independent regardless of whether or not they're made in the same factory. The Poisson distribution has the form: \\
 \begin{equation}
@@ -124,9 +115,7 @@ Derive the maximum likelihood estimate of the parameter $\lambda$ in terms of $x
 \\
 
 
-%%%%%%%%%%%%%%%%%%%%
 {\huge \textbf{Submission Instructions}} \\
-%%%%%%%%%%%%%%%%%%%%
 
 When you have finished, follow the instructions on the \href{https://course.ccs.neu.edu/cs6220/homework-3/}{ homework main page}. Commit your code, outputs, and PDF writeup to your repository and provide the repository link to \href{https://www.gradescope.com}{Gradescope}.
 
