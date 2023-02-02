@@ -13,68 +13,7 @@
 
 \maketitle % Print the title
 
-
-{\huge \textbf{Multisource Joins}}  \\
-
-News articles are commonly aggregated from multiple sites and companies. The landscape of news has been evolving ever since social media has amplified its effects. In politics, Congress has explored the topic of bias with the diversity of news sources. That is, news articles may cover news stories with differing perspectives and language. \\
-
-The data that we will be using today comes from Kaggle, and it is available \href{https://course.ccs.neu.edu/cs6220/homework-3/}{here}. There are two CSV files that we wish to join in this week's homework:
-
-\begin{itemize}
-    \item \verb"data/id_titles.csv"
-    \item \verb"data/id_publishers.csv"
-\end{itemize}
-
-As there name suggests, there is publishing data associated with articles and there is title and description information associated with the same articles. Each table has many instances, and each instance for both tables have an associated ID, where it is possible to join the two data sources. \\
-
-In this particular case, there is some missing information in the join. Your task is as follows. \\
-
-{\Large \textbf{Question 1 a.)} [20 pts]}
-\begin{itemize}
-    \item Write out a file that has all the data columns, but where the rows are only those articles where there are titles but no publisher information. Call it titles\_no\_publishers.txt. In your PDF writeup, include the first 10 rows ordered by ID. This table should look something like the below (ignore the values): \\
-    \begin{center}
-    \includegraphics[width=100mm]{images/pub_no_title.png} \\
-    \end{center}
-\end{itemize}
-
-\begin{itemize}
-    \item Write out a file that has all the data columns, but where the rows are only those articles where there are publishers but not title information. Call it titles\_no\_publishers.txt. In your PDF writeup, include the first 10 rows ordered by ID. That table should look something like the below (ignore the values): \\
-    \begin{center}
-    \includegraphics[width=150mm]{images/title_no_pub.png} \\    
-    \end{center}
-\end{itemize} 
-
-{\Large \textbf{Question 1 b.)} [Extra Credit - 5 pts]} \\
-\begin{itemize}
-\item Explore the data further, and identify potential problems that could arise if we were to further analyze the data (e.g., apply a machine learning algorithm). Is there still missing data? That is to say, do all the columns have the correct data? What could have gone wrong in the data creation step? (You needn't code anything, but conceptually describe any issues you see and how you would remedy it.)
-\end{itemize}
-.\\
-\\
-{\huge \textbf{Frequent Itemsets}} \\
-
-Consider the following set of frequent 3-itemsets:
-
-\begin{verbatim}
-{1, 2, 3}, {1, 2, 4}, {1, 2, 5}, {1, 3, 4}, 
-{2, 3, 4}, {2, 3, 5}, {3, 4, 5}.
-\end{verbatim} \\
-
-Assume that there are only five items in the data set. This question was taken from \href{https://www-users.cse.umn.edu/~kumar001/dmbook/ch5_association_analysis.pdf}{Tan et al.}, which may help in reviewing Candidate Generation.\\
-
-{\Large \textbf{Question 2a.)} [10 pts]}
-\begin{itemize}
-    \item List all candidate 4-itemsets obtained by a candidate generation procedure using the $F_{k - 1} \times F_1$ merging strategy. \\
-\end{itemize}
-{\Large \textbf{Question 2b.)} [10 pts]}
-\begin{itemize}
-    \item List all candidate 4-itemsets obtained by the candidate generation procedure in A Priori, using $F_{k-1} \times F_{k-1}$. \\
-\end{itemize}
-{\Large \textbf{Question 2c.)} [10 pts]} \\
-\begin{itemize}
-    \item List all candidate 4-itemsets that survive the candidate pruning step of
-the Apriori algorithm. \\
-\end{itemize}
-
+% Convert to DOCX using https://pdf2docx.com/
 
 {\huge \textbf{Principle Components Analysis}} \\
 
@@ -86,7 +25,7 @@ from sklearn.datasets import load_wine
 wine = load_wine()
 \end{verbatim} \\
 \vspace{5mm}
-{\Large \textbf{Question 3} [25 pts]} \\
+{\Large \textbf{Question 1} [25 pts]} \\
 
 Preprocess the the data with \textbf{z-score normalization} and scatter the data that's been projected onto the first two principle components with different colors for each target/class of wine. Include your code (linked or inline).\\
 
@@ -98,10 +37,6 @@ The below scatter plot is an example of displaying multiple classes with differe
 
 {\huge \textbf{Parameter Estimation}} \\
 
-
-
-
-
 It is well-known that light bulbs commonly go out according to a Poisson distribution, and are independent regardless of whether or not they're made in the same factory. The Poisson distribution has the form: \\
 \begin{equation}
 p(X | \lambda) = \frac{ \exp^{-\lambda} \lambda ^{x_i}}{ x_i !} \nonumber
@@ -109,13 +44,15 @@ p(X | \lambda) = \frac{ \exp^{-\lambda} \lambda ^{x_i}}{ x_i !} \nonumber
 
 An architect has outfitted a building with 32,000 of the same lightbulb. The factory has provided him with data on when $N$ of these lightbulbs have gone out over their lifetimes. They've been measured with $\mathcal{D} = \{ x_1, x_2, \cdots, x_N \}$\\
 \\
-{\Large \textbf{Question 4} [25 pts]} \\
+{\Large \textbf{Question 2} [25 pts]} \\
 \\
 Derive the maximum likelihood estimate of the parameter $\lambda$ in terms of $x_i$. Please show your work. \\
 \\
 
 
+%%%%%%%%%%%%%%%%%%%%
 {\huge \textbf{Submission Instructions}} \\
+%%%%%%%%%%%%%%%%%%%%
 
 When you have finished, follow the instructions on the \href{https://course.ccs.neu.edu/cs6220/homework-3/}{ homework main page}. Commit your code, outputs, and PDF writeup to your repository and provide the repository link to \href{https://www.gradescope.com}{Gradescope}.
 
